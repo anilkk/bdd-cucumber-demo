@@ -6,8 +6,6 @@ import EmojiObjectsTwoToneIcon from "@material-ui/icons/EmojiObjectsTwoTone";
 import Grid from "@material-ui/core/Grid";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import ErrorIcon from "@material-ui/icons/Error";
 import Alert from "@material-ui/lab/Alert";
 import "./styles.css";
 
@@ -50,20 +48,20 @@ const ToggleButtonSizes = function() {
   };
 
   const children = [
-    <ToggleButton key={1} value="day">
+    <ToggleButton key={1} value="day" test-data="day">
       Day <WbSunnyIcon />
     </ToggleButton>,
-    <ToggleButton key={2} value="night">
+    <ToggleButton key={2} value="night" test-data="night">
       Night
       <Brightness3Icon />
     </ToggleButton>
   ];
 
   const lightChildren = [
-    <ToggleButton key={1} value="on">
+    <ToggleButton key={1} value="on" test-data="light-on">
       On <WbIncandescentIcon />
     </ToggleButton>,
-    <ToggleButton key={2} value="off">
+    <ToggleButton key={2} value="off" test-data="light-off">
       off
       <EmojiObjectsTwoToneIcon />
     </ToggleButton>
@@ -109,12 +107,12 @@ const ToggleButtonSizes = function() {
           <h3>Outcome</h3>
           <h3>
             {!(time === "night" && light === "off") && (
-              <Alert variant="filled" severity="success">
+              <Alert variant="filled" severity="success" test-data="success">
                 John {outcomes[time + "light" + light].state}
               </Alert>
             )}
             {time === "night" && light === "off" && (
-              <Alert variant="filled" severity="error">
+              <Alert variant="filled" severity="error" test-data="fail">
                 John {outcomes[time + "light" + light].state}
               </Alert>
             )}
