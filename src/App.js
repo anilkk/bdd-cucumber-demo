@@ -74,6 +74,21 @@ const ToggleButtonSizes = function() {
         <hr />
       </Grid>
       <Grid item xs={12} sm={4}>
+        <Grid>
+          <h3>Outcome</h3>
+          <h3>
+            {!(time === "night" && light === "off") && (
+              <Alert variant="filled" severity="success" test-data="success">
+                John {outcomes[time + "light" + light].state}
+              </Alert>
+            )}
+            {time === "night" && light === "off" && (
+              <Alert variant="filled" severity="error" test-data="fail">
+                John {outcomes[time + "light" + light].state}
+              </Alert>
+            )}
+          </h3>
+        </Grid>
         <Grid item>
           <h3>Context</h3>
           <ToggleButtonGroup
@@ -103,23 +118,8 @@ const ToggleButtonSizes = function() {
           <p>John can perform this action</p>
           <hr />
         </Grid>
-        <Grid>
-          <h3>Outcome</h3>
-          <h3>
-            {!(time === "night" && light === "off") && (
-              <Alert variant="filled" severity="success" test-data="success">
-                John {outcomes[time + "light" + light].state}
-              </Alert>
-            )}
-            {time === "night" && light === "off" && (
-              <Alert variant="filled" severity="error" test-data="fail">
-                John {outcomes[time + "light" + light].state}
-              </Alert>
-            )}
-          </h3>
-        </Grid>
       </Grid>
-      <Grid item xs={12} sm={7}>
+      <Grid item xs={12} sm={8}>
         <img
           style={{ "max-width": "100%" }}
           src={outcomes[time + "light" + light].url}
