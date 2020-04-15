@@ -17,13 +17,17 @@
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
+    "cypress": "^4.4.0",
+    "cypress-cucumber-preprocessor": "^2.3.0",
     "typescript": "3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "cypress run",
+    "eject": "react-scripts eject",
+    "cypress-open": "cypress open",
+    "cypress-run": "cypress run --spec **/*.feature"
   },
   "browserslist": [
     ">0.2%",
