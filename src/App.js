@@ -8,6 +8,7 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import ErrorIcon from "@material-ui/icons/Error";
+import Alert from "@material-ui/lab/Alert";
 import "./styles.css";
 
 const outcomes = {
@@ -69,7 +70,7 @@ const ToggleButtonSizes = function() {
   ];
 
   return (
-    <Grid container direction="row" alignItems="center">
+    <Grid container direction="row" alignItems="center" spacing={3}>
       <Grid xs={12}>
         <h1>BDD Cucumber demo</h1>
         <hr />
@@ -108,15 +109,19 @@ const ToggleButtonSizes = function() {
           <h3>Outcome</h3>
           <h3>
             {!(time === "night" && light === "off") && (
-              <CheckCircleIcon style={{ color: "green" }} />
+              <Alert variant="filled" severity="success">
+                John {outcomes[time + "light" + light].state}
+              </Alert>
             )}
-            {"   "}
-            {time === "night" && light === "off" && <ErrorIcon color="error" />}
-            John {outcomes[time + "light" + light].state}
+            {time === "night" && light === "off" && (
+              <Alert variant="filled" severity="error">
+                John {outcomes[time + "light" + light].state}
+              </Alert>
+            )}
           </h3>
         </Grid>
       </Grid>
-      <Grid item xs={12} sm={8}>
+      <Grid item xs={12} sm={7}>
         <img
           style={{ "max-width": "100%" }}
           src={outcomes[time + "light" + light].url}
