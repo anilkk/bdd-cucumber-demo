@@ -1,19 +1,10 @@
-# See https://github.com/cypress-io/circleci-orb
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 workflows:
   build:
     jobs:
-      - cypress/run
-    steps:
-    - run:
-        name: Save test results
-        command: |
-            mkdir -p ~/cucumber
-            bundle exec cucumber --format pretty --format json --out ~/cucumber/tests.cucumber
-        when: always
-    - store_test_results:
-        path: ~/cucumber
-    - store_artifacts:
-        path: ~/cucumber
+      - cypress/run:
+          post-steps:
+            - store_test_results:
+                path: cypress/results
