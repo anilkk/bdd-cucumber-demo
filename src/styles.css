@@ -1,4 +1,9 @@
 .App {
-  font-family: sans-serif;
+  font-family: roboto, sans-serif;
   text-align: center;
+}
+
+.MuiAlert-message {
+  font-style: italic;
+  font-size: 1.3em;
 }
