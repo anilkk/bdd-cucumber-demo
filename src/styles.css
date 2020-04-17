@@ -7,3 +7,17 @@
   font-style: italic;
   font-size: 1.3em;
 }
+
+/* font-family: proxima-soft, sans-serif;
+  font-style: normal;
+  font-weight: 200; */
+
+.night {
+  background-color: #0d1f2b;
+  color: #fff;
+}
+
+.day {
+  background-color: #d3eef8;
+  color: #000;
+}

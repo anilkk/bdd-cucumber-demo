@@ -53,7 +53,7 @@ const ToggleButtonSizes = function() {
     </ToggleButton>,
     <ToggleButton key={2} value="night" test-data="night">
       Night
-      <Brightness3Icon style={{ color: "#aaa" }} />
+      <Brightness3Icon style={time === "night" ? { color: "fff" } : {}} />
     </ToggleButton>
   ];
 
@@ -69,7 +69,13 @@ const ToggleButtonSizes = function() {
   ];
 
   return (
-    <Grid container direction="row" alignItems="center" spacing={3}>
+    <Grid
+      container
+      direction="row"
+      alignItems="center"
+      spacing={3}
+      className={time}
+    >
       <Grid xs={12}>
         <h1>BDD Cucumber demo</h1>
         <hr />
@@ -121,6 +127,18 @@ const ToggleButtonSizes = function() {
         </Grid>
       </Grid>
       <Grid item xs={12} sm={8}>
+        <h3>
+          {!(time === "night" && light === "off") && (
+            <Alert variant="filled" severity="success" test-data="success">
+              John {outcomes[time + "light" + light].state}
+            </Alert>
+          )}
+          {time === "night" && light === "off" && (
+            <Alert variant="filled" severity="error" test-data="fail">
+              John {outcomes[time + "light" + light].state}
+            </Alert>
+          )}
+        </h3>
         <img
           style={{ "max-width": "100%" }}
           src={outcomes[time + "light" + light].url}
