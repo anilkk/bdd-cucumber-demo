@@ -49,17 +49,18 @@ const ToggleButtonSizes = function() {
 
   const children = [
     <ToggleButton key={1} value="day" test-data="day">
-      Day <WbSunnyIcon />
+      Day <WbSunnyIcon style={time === "day" ? { color: "orange" } : {}} />
     </ToggleButton>,
     <ToggleButton key={2} value="night" test-data="night">
       Night
-      <Brightness3Icon />
+      <Brightness3Icon style={time === "night" ? { color: "fff" } : {}} />
     </ToggleButton>
   ];
 
   const lightChildren = [
     <ToggleButton key={1} value="on" test-data="light-on">
-      On <WbIncandescentIcon />
+      On{" "}
+      <WbIncandescentIcon style={light === "on" ? { color: "#cc6d2e" } : {}} />
     </ToggleButton>,
     <ToggleButton key={2} value="off" test-data="light-off">
       off
@@ -68,29 +69,20 @@ const ToggleButtonSizes = function() {
   ];
 
   return (
-    <Grid container direction="row" alignItems="center" spacing={3}>
+    <Grid
+      container
+      direction="row"
+      alignItems="center"
+      spacing={3}
+      className={time}
+    >
       <Grid xs={12}>
         <h1>BDD Cucumber demo</h1>
         <hr />
       </Grid>
       <Grid item xs={12} sm={4}>
-        <Grid>
-          <h3>Outcome</h3>
-          <h3>
-            {!(time === "night" && light === "off") && (
-              <Alert variant="filled" severity="success" test-data="success">
-                John {outcomes[time + "light" + light].state}
-              </Alert>
-            )}
-            {time === "night" && light === "off" && (
-              <Alert variant="filled" severity="error" test-data="fail">
-                John {outcomes[time + "light" + light].state}
-              </Alert>
-            )}
-          </h3>
-        </Grid>
         <Grid item>
-          <h3>Context</h3>
+          <h3>Context (GIVEN)</h3>
           <ToggleButtonGroup
             size="small"
             value={time}
@@ -106,7 +98,7 @@ const ToggleButtonSizes = function() {
           <hr />
         </Grid>
         <Grid item>
-          <h3>Action</h3>
+          <h3>Action (WHEN)</h3>
           <ToggleButtonGroup
             size="small"
             value={light}
@@ -118,8 +110,35 @@ const ToggleButtonSizes = function() {
           <p>John can perform this action</p>
           <hr />
         </Grid>
+        <Grid>
+          <h3>Outcome (THEN)</h3>
+          <h3>
+            {!(time === "night" && light === "off") && (
+              <Alert variant="filled" severity="success" test-data="success">
+                John {outcomes[time + "light" + light].state}
+              </Alert>
+            )}
+            {time === "night" && light === "off" && (
+              <Alert variant="filled" severity="error" test-data="fail">
+                John {outcomes[time + "light" + light].state}
+              </Alert>
+            )}
+          </h3>
+        </Grid>
       </Grid>
       <Grid item xs={12} sm={8}>
+        <h3>
+          {!(time === "night" && light === "off") && (
+            <Alert variant="filled" severity="success" test-data="success">
+              John {outcomes[time + "light" + light].state}
+            </Alert>
+          )}
+          {time === "night" && light === "off" && (
+            <Alert variant="filled" severity="error" test-data="fail">
+              John {outcomes[time + "light" + light].state}
+            </Alert>
+          )}
+        </h3>
         <img
           style={{ "max-width": "100%" }}
           src={outcomes[time + "light" + light].url}
