@@ -13,6 +13,10 @@
   font-size: 64px;
 }
 
+h2 {
+  font-size: 72px;
+}
+
 .font-sty-italic {
   font-style: italic;
 }
@@ -30,8 +34,7 @@
   color: #000;
 }
 
-.switch,
-.timeSwitch {
+.switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -56,9 +59,6 @@
   transition: 0.4s;
 }
 
-.timeSwitch .slider {
-  background-color: #2196f3;
-}
 .slider:before {
   position: absolute;
   content: "";
@@ -71,23 +71,12 @@
   transition: 0.4s;
 }
 
-.timeSwitch .slider:before {
-  background-color: #ff9800;
-}
 input:checked + .slider {
   background-color: #2196f3;
 }
 
-.timeSwitch input:checked + .slider {
-  background-color: #0d1f2b;
-}
-
 input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
-}
-
-.timeSwitch input:focus + .slider {
-  box-shadow: 0 0 1px #fff;
 }
 
 input:checked + .slider:before {

@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Alert from "@material-ui/lab/Alert";
+import AlertTitle from "@material-ui/lab/AlertTitle";
 import "./styles.css";
 
 const bulbLightOn =
@@ -35,8 +36,8 @@ const ToggleButtonSizes = function() {
         </Grid>
         <Grid item>
           <h3>
-            Change Context (GIVEN){" "}
-            <label class="timeSwitch">
+            Change Context (GIVEN):{" "}
+            <label className="switch">
               <input
                 type="checkbox"
                 checked={myTime}
@@ -53,7 +54,7 @@ const ToggleButtonSizes = function() {
             alt={myTime ? "Sun and cloud" : "moon and star"}
           />
           <p className="font-sty-italic">
-            John reading the news papper in the {myTime} with light{" "}
+            Maria reading the news papper in the {myTime} with light{" "}
             {myLight ? "on" : "off"}
           </p>
           <hr />
@@ -62,7 +63,7 @@ const ToggleButtonSizes = function() {
           <Grid item>
             <h3>
               Trigger Action (WHEN):{" "}
-              <label class="switch">
+              <label className="switch">
                 <input
                   type="checkbox"
                   checked={myLight}
@@ -79,7 +80,7 @@ const ToggleButtonSizes = function() {
               src={myLight ? bulbLightOn : bulbLightOff}
               alt={myLight ? "Bulb light on" : "Bulb light off"}
             />
-            <p className="font-sty-italic">John can perform this action</p>
+            <p className="font-sty-italic">Maria can perform this action</p>
           </Grid>
         </Grid>
       </Grid>
@@ -89,16 +90,20 @@ const ToggleButtonSizes = function() {
           src={myLight ? homeWithLightUrl : homeWithoutLightUrl}
           alt="home"
         />
-        <h2>
-          <Alert
-            variant="filled"
-            severity={myTime || myLight ? "success" : "error"}
-            test-data={myTime || myLight ? "success" : "fail"}
-          >
-            Outcome (THEN): John {myTime || myLight ? "can" : "can't"} read the
-            book
-          </Alert>
-        </h2>
+        <Grid container justify="center">
+          <h2>
+            <Alert
+              variant="filled"
+              icon={false}
+              severity={myTime || myLight ? "success" : "error"}
+              test-data={myTime || myLight ? "success" : "fail"}
+            >
+              <AlertTitle>Outcome (THEN):</AlertTitle>
+              Maria {myTime || myLight ? "can" : "can't"}{" "}
+              <strong>read the book</strong>{" "}
+            </Alert>
+          </h2>
+        </Grid>
       </Grid>
     </Grid>
   );
