@@ -39,3 +39,22 @@ E2E automation tests are written using [Cypress](https://www.cypress.io/) and ex
      Then she should be able to read the book
 
 ```
+
+## How to run Cypress e2e test locally
+
+1. Instal node module dependencies 
+```shell
+npm intall
+```
+
+2. Run Cypress
+
+```shell
+npm run cypress-run
+```
+
+or if you want run with Cypress interactive window
+
+```shell
+npm run cypress-open
+```

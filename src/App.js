@@ -117,10 +117,17 @@ const BddDemo = function() {
 const Gherkins = () => (
   <Grid container direction="row" alignItems="center" spacing={3}>
     <Grid item xs={12}>
-      <h1> Gherkins </h1>
+      <h1> </h1>
       <div>
-        <h3> Gherkins </h3>
-        <p />
+        By{' '}
+        <a href="https://twitter.com/anilbms75" target="_blank">
+          @anilbms75
+        </a>
+        , for more details about the project refer on{' '}
+        <a href="https://github.com/anilkk/bdd-cucumber-demo" target="_blank">
+          Github
+        </a>
+        .
       </div>
     </Grid>
   </Grid>
