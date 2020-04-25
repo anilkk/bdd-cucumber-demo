@@ -1,21 +1,21 @@
-import React from "react";
-import Grid from "@material-ui/core/Grid";
-import Alert from "@material-ui/lab/Alert";
-import AlertTitle from "@material-ui/lab/AlertTitle";
-import "./styles.css";
+import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import Alert from '@material-ui/lab/Alert';
+import AlertTitle from '@material-ui/lab/AlertTitle';
+import './styles.css';
 
 const bulbLightOn =
-  "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/2b55/060a/006b8e70c722b42723d29228d9321e3e";
+  'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/2b55/060a/006b8e70c722b42723d29228d9321e3e';
 const bulbLightOff =
-  "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/a828/79de/6460848b8c2e11c8340911803fb7c8fb";
+  'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/a828/79de/6460848b8c2e11c8340911803fb7c8fb';
 const sunAndCLoudUrl =
-  "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/6633/90f1/1d2d41a10dc07ee4cad3e9988a24f10e";
+  'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/6633/90f1/1d2d41a10dc07ee4cad3e9988a24f10e';
 const moonAndStarUrl =
-  "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/1e73/5a4c/03f3716dbf829d9f173283674258196e";
+  'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/1e73/5a4c/03f3716dbf829d9f173283674258196e';
 const homeWithLightUrl =
-  "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/646b/60ba/9bd59b5d1072b939bc58f6408bb5c4c6";
+  'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/646b/60ba/9bd59b5d1072b939bc58f6408bb5c4c6';
 const homeWithoutLightUrl =
-  "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/0bf4/347c/88d5c0c68d76f3b8026386981eb1a0a3";
+  'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/0bf4/347c/88d5c0c68d76f3b8026386981eb1a0a3';
 
 const BddDemo = function() {
   const [myLight, setMyLight] = React.useState(false);
@@ -27,7 +27,7 @@ const BddDemo = function() {
       direction="row"
       alignItems="center"
       spacing={3}
-      className={myTime ? "day" : "night"}
+      className={myTime ? 'day' : 'night'}
     >
       <Grid item xs={12}>
         <Grid container spacing={5}>
@@ -37,38 +37,40 @@ const BddDemo = function() {
             </Grid>
             <Grid item container direction="column" alignItems="flex-end">
               <h3>
-                Change Context (GIVEN):{" "}
+                Change Context (GIVEN):{' '}
                 <label className="switch">
                   <input
                     type="checkbox"
                     checked={myTime}
-                    onChange={event => {
+                    test-data={myTime ? 'day' : 'night'}
+                    onChange={(event) => {
                       setMyTime(event.target.checked);
                     }}
                   />
                   <span class="slider round" />
-                </label>{" "}
+                </label>{' '}
                 {/* Day */}
               </h3>
               <img
                 src={myTime ? sunAndCLoudUrl : moonAndStarUrl}
-                alt={myTime ? "Sun and cloud" : "moon and star"}
+                alt={myTime ? 'Sun and cloud' : 'moon and star'}
               />
               <p className="font-sty-italic">
-                Maria reading the news papper in the {myTime} with light{" "}
-                {myLight ? "on" : "off"}
+                Maria reading the news papper in the {myTime} with light{' '}
+                {myLight ? 'on' : 'off'}
               </p>
               <hr />
             </Grid>
             <Grid item container direction="column" alignItems="flex-end">
               <Grid item>
                 <h3>
-                  Trigger Action (WHEN):{" "}
+                  Trigger Action (WHEN):{' '}
                   <label className="switch">
                     <input
                       type="checkbox"
                       checked={myLight}
-                      onChange={event => {
+                      test-data={myLight ? 'light-on' : 'light-off'}
+                      onChange={(event) => {
                         setMyLight(event.target.checked);
                       }}
                     />
@@ -79,7 +81,7 @@ const BddDemo = function() {
               <Grid item>
                 <img
                   src={myLight ? bulbLightOn : bulbLightOff}
-                  alt={myLight ? "Bulb light on" : "Bulb light off"}
+                  alt={myLight ? 'Bulb light on' : 'Bulb light off'}
                 />
                 <p className="font-sty-italic">Maria can perform this action</p>
               </Grid>
@@ -87,7 +89,7 @@ const BddDemo = function() {
           </Grid>
           <Grid item sm={8}>
             <img
-              style={{ "max-width": "500px" }}
+              style={{ 'max-width': '500px' }}
               src={myLight ? homeWithLightUrl : homeWithoutLightUrl}
               alt="home"
             />
@@ -96,12 +98,12 @@ const BddDemo = function() {
                 <Alert
                   variant="filled"
                   icon={false}
-                  severity={myTime || myLight ? "success" : "error"}
-                  test-data={myTime || myLight ? "success" : "fail"}
+                  severity={myTime || myLight ? 'success' : 'error'}
+                  test-data={myTime || myLight ? 'success' : 'error'}
                 >
                   <AlertTitle>Outcome (THEN):</AlertTitle>
-                  Maria {myTime || myLight ? "can" : "can't"}{" "}
-                  <strong>read the book</strong>{" "}
+                  Maria {myTime || myLight ? 'can' : "can't"}{' '}
+                  <strong>read the book</strong>{' '}
                 </Alert>
               </h2>
             </Grid>
