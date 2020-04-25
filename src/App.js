@@ -17,7 +17,7 @@ const homeWithLightUrl =
 const homeWithoutLightUrl =
   "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/0bf4/347c/88d5c0c68d76f3b8026386981eb1a0a3";
 
-const ToggleButtonSizes = function() {
+const BddDemo = function() {
   const [myLight, setMyLight] = React.useState(false);
   const [myTime, setMyTime] = React.useState(true);
 
@@ -29,90 +29,105 @@ const ToggleButtonSizes = function() {
       spacing={3}
       className={myTime ? "day" : "night"}
     >
-      <Grid sm={12} />
-      <Grid item sm={4}>
-        <Grid item>
-          <h1 className="banner-header">BDD Demo</h1>
-        </Grid>
-        <Grid item>
-          <h3>
-            Change Context (GIVEN):{" "}
-            <label className="switch">
-              <input
-                type="checkbox"
-                checked={myTime}
-                onChange={event => {
-                  setMyTime(event.target.checked);
-                }}
+      <Grid item xs={12}>
+        <Grid container spacing={5}>
+          <Grid item sm={4} spacing={3}>
+            <Grid item>
+              <h1 className="banner-header">BDD Demo</h1>
+            </Grid>
+            <Grid item container direction="column" alignItems="flex-end">
+              <h3>
+                Change Context (GIVEN):{" "}
+                <label className="switch">
+                  <input
+                    type="checkbox"
+                    checked={myTime}
+                    onChange={event => {
+                      setMyTime(event.target.checked);
+                    }}
+                  />
+                  <span class="slider round" />
+                </label>{" "}
+                {/* Day */}
+              </h3>
+              <img
+                src={myTime ? sunAndCLoudUrl : moonAndStarUrl}
+                alt={myTime ? "Sun and cloud" : "moon and star"}
               />
-              <span class="slider round" />
-            </label>{" "}
-            {/* Day */}
-          </h3>
-          <img
-            src={myTime ? sunAndCLoudUrl : moonAndStarUrl}
-            alt={myTime ? "Sun and cloud" : "moon and star"}
-          />
-          <p className="font-sty-italic">
-            Maria reading the news papper in the {myTime} with light{" "}
-            {myLight ? "on" : "off"}
-          </p>
-          <hr />
-        </Grid>
-        <Grid item container direction="column" alignItems="flex-end">
-          <Grid item>
-            <h3>
-              Trigger Action (WHEN):{" "}
-              <label className="switch">
-                <input
-                  type="checkbox"
-                  checked={myLight}
-                  onChange={event => {
-                    setMyLight(event.target.checked);
-                  }}
+              <p className="font-sty-italic">
+                Maria reading the news papper in the {myTime} with light{" "}
+                {myLight ? "on" : "off"}
+              </p>
+              <hr />
+            </Grid>
+            <Grid item container direction="column" alignItems="flex-end">
+              <Grid item>
+                <h3>
+                  Trigger Action (WHEN):{" "}
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      checked={myLight}
+                      onChange={event => {
+                        setMyLight(event.target.checked);
+                      }}
+                    />
+                    <span class="slider round" />
+                  </label>
+                </h3>
+              </Grid>
+              <Grid item>
+                <img
+                  src={myLight ? bulbLightOn : bulbLightOff}
+                  alt={myLight ? "Bulb light on" : "Bulb light off"}
                 />
-                <span class="slider round" />
-              </label>
-            </h3>
+                <p className="font-sty-italic">Maria can perform this action</p>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item>
+          <Grid item sm={8}>
             <img
-              src={myLight ? bulbLightOn : bulbLightOff}
-              alt={myLight ? "Bulb light on" : "Bulb light off"}
+              style={{ "max-width": "500px" }}
+              src={myLight ? homeWithLightUrl : homeWithoutLightUrl}
+              alt="home"
             />
-            <p className="font-sty-italic">Maria can perform this action</p>
+            <Grid container justify="center">
+              <h2>
+                <Alert
+                  variant="filled"
+                  icon={false}
+                  severity={myTime || myLight ? "success" : "error"}
+                  test-data={myTime || myLight ? "success" : "fail"}
+                >
+                  <AlertTitle>Outcome (THEN):</AlertTitle>
+                  Maria {myTime || myLight ? "can" : "can't"}{" "}
+                  <strong>read the book</strong>{" "}
+                </Alert>
+              </h2>
+            </Grid>
           </Grid>
-        </Grid>
-      </Grid>
-      <Grid item sm={8}>
-        <img
-          style={{ "max-width": "100%" }}
-          src={myLight ? homeWithLightUrl : homeWithoutLightUrl}
-          alt="home"
-        />
-        <Grid container justify="center">
-          <h2>
-            <Alert
-              variant="filled"
-              icon={false}
-              severity={myTime || myLight ? "success" : "error"}
-              test-data={myTime || myLight ? "success" : "fail"}
-            >
-              <AlertTitle>Outcome (THEN):</AlertTitle>
-              Maria {myTime || myLight ? "can" : "can't"}{" "}
-              <strong>read the book</strong>{" "}
-            </Alert>
-          </h2>
         </Grid>
       </Grid>
     </Grid>
   );
 };
 
+const Gherkins = () => (
+  <Grid container direction="row" alignItems="center" spacing={3}>
+    <Grid item xs={12}>
+      <h1> Gherkins </h1>
+      <div>
+        <h3> Gherkins </h3>
+        <p />
+      </div>
+    </Grid>
+  </Grid>
+);
 export default function App() {
   return (
     <div className="App">
-      <ToggleButtonSizes />
+      <BddDemo />
+      <Gherkins />
     </div>
   );
 }
