@@ -31,7 +31,7 @@ const BddDemo = function() {
     >
       <Grid item xs={12}>
         <Grid container spacing={5}>
-          <Grid item sm={4} spacing={3}>
+          <Grid item sm={4}>
             <Grid item>
               <h1 className="banner-header">BDD Demo</h1>
             </Grid>
@@ -47,7 +47,7 @@ const BddDemo = function() {
                       setMyTime(event.target.checked);
                     }}
                   />
-                  <span class="slider round" />
+                  <span className="slider round" />
                 </label>{' '}
                 {/* Day */}
               </h3>
@@ -74,7 +74,7 @@ const BddDemo = function() {
                         setMyLight(event.target.checked);
                       }}
                     />
-                    <span class="slider round" />
+                    <span className="slider round" />
                   </label>
                 </h3>
               </Grid>
@@ -89,7 +89,7 @@ const BddDemo = function() {
           </Grid>
           <Grid item sm={8}>
             <img
-              style={{ 'max-width': '500px' }}
+              style={{ maxWidth: '500px' }}
               src={myLight ? homeWithLightUrl : homeWithoutLightUrl}
               alt="home"
             />
