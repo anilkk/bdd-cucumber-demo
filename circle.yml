@@ -7,4 +7,6 @@ workflows:
       - cypress/run:
           post-steps:
             - store_test_results:
-                path: cypress/results
+                path: cypress/cucumber-json
+            - store_artifacts:
+                path: cypress/cucumber-json
