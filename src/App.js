@@ -120,11 +120,11 @@ const Gherkins = () => (
       <h1> </h1>
       <div>
         By{' '}
-        <a href="https://twitter.com/anilbms75" target="_blank">
+        <a href="https://twitter.com/anilbms75" target="_blank" rel="noopener noreferrer">
           @anilbms75
         </a>
         , for more details about the project refer on{' '}
-        <a href="https://github.com/anilkk/bdd-cucumber-demo" target="_blank">
+        <a href="https://github.com/anilkk/bdd-cucumber-demo" target="_blank" rel="noopener noreferrer">
           Github
         </a>
         .
