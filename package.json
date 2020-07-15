@@ -17,7 +17,7 @@
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
-    "cypress": "^4.4.0",
+    "cypress": "^4.10.0",
     "cypress-cucumber-preprocessor": "^2.3.0",
     "typescript": "3.3.3"
   },
@@ -27,7 +27,10 @@
     "test": "cypress run",
     "eject": "react-scripts eject",
     "cypress-open": "cypress open",
-    "cypress-run": "cypress run --spec **/*.feature"
+    "cypress-run": "cypress run --spec **/*.feature",
+    "cypress-run-chrome": "cypress run --browser chrome --spec **/*.feature",
+    "cypress-run-firefox": "cypress run --browser firefox --spec **/*.feature",
+    "cypress-run-edge": "cypress run --browser edge:beta --spec **/*.feature"
   },
   "browserslist": [
     ">0.2%",

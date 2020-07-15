@@ -1,10 +1,19 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@1.25.0
 workflows:
   build:
     jobs:
+      - cypress/install
       - cypress/run:
+          requires:
+            - cypress/install
+          executor: cypress/browsers-chrome78-ff70
+            browser: chrome
+          parallel: true
+          parallelism: 2
+          group: 2 machines
+          tags: 'nightly,staging'
           post-steps:
             - store_test_results:
                 path: cypress/cucumber-json
