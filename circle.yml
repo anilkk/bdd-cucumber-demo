@@ -4,12 +4,9 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install
       - cypress/run:
-          requires:
-            - cypress/install
-          executor: cypress/browsers-chrome78-ff70
-            browser: chrome
+          executor: cypress/browsers-chrome69
+          browser: chrome
           parallel: true
           parallelism: 2
           group: 2 machines
