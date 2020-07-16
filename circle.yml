@@ -2,11 +2,17 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
 executors:
-  with-chrome:
+  with-cff:
     docker:
       - image: 'cypress/browsers:node12.14.1-chrome83-ff77'
 workflows:
   build:
     jobs:
       - cypress/run:
-          executor: with-chrome
+          name: 'Chrome'
+          executor: with-cff
+          browser: chrome
+      - cypress/run:
+          name: 'Firefox'
+          executor: with-cff
+          browser: firefox
