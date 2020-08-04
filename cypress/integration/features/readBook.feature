@@ -25,5 +25,5 @@
       And it's a night
       And light is off
      When she switch on the light
-     Then she should be not able to read the book
+     Then she should be able to read the book
   
