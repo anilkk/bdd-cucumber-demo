@@ -1,6 +1,6 @@
 import { When } from 'cypress-cucumber-preprocessor/steps';
 
-// he switch on the light
+// she switch on the light
 When('she switch on the light', () => {
   cy.get('body').then(($el) => {
     if ($el.find(`[test-data="light-off"]`).length) {
