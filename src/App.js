@@ -6,29 +6,40 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import "./styles.css";
 
-const bulbLightOn =
-  "https://res.cloudinary.com/anilkumark/image/upload/v1594198626/bdd/bulb-light-on_fbqukt.png";
+const bulbLightImage = {
+  yellow: 'https://res.cloudinary.com/anilkumark/image/upload/v1615237104/bdd/yellow-bulb-light-on_cogey1.png',
+  red: 'https://res.cloudinary.com/anilkumark/image/upload/v1615237103/bdd/red-bulb-light-on_ha2bup.png',
+  orange: 'https://res.cloudinary.com/anilkumark/image/upload/v1615237103/bdd/orange-bulb-light-on_vcjvmx.png'
+};
+
+const homeWithLightImage = {
+  yellow: 'https://res.cloudinary.com/anilkumark/image/upload/v1615237835/bdd/light-on-yellow_vctyzi.png',
+  red: 'https://res.cloudinary.com/anilkumark/image/upload/v1615237834/bdd/light-on-red_vidznn.png',
+  orange: 'https://res.cloudinary.com/anilkumark/image/upload/v1615237837/bdd/light-on-orange_ad1huy.png'
+};
+
 const bulbLightOff =
   "https://res.cloudinary.com/anilkumark/image/upload/v1594198626/bdd/bulb-light-off_romzun.png";
 const sunAndCLoudUrl =
   "https://res.cloudinary.com/anilkumark/image/upload/v1594198627/bdd/sun-and-sky_xlgedq.png";
 const moonAndStarUrl =
   "https://res.cloudinary.com/anilkumark/image/upload/v1594198626/bdd/moon-and-star_rqivr9.png";
-const homeWithLightUrl =
-  "https://res.cloudinary.com/anilkumark/image/upload/v1594198627/bdd/light-on_gtkhmj.png";
 const homeWithoutLightUrl =
   "https://res.cloudinary.com/anilkumark/image/upload/v1594198626/bdd/light-off_opnuay.png";
 
 const BddDemo = function() {
   const [myLight, setMyLight] = React.useState(false);
+  const [bulbLightOn, setBulbLightOn] = React.useState(bulbLightImage.yellow);
+  const [homeWithLightUrl, setHomeWithLightUrl] = React.useState(homeWithLightImage.yellow);
   const [myTime, setMyTime] = React.useState(true);
   const [lampLight, setLampLight] = React.useState('yellow');
 
   const handleLampLightChange = (event) => {
     setLampLight(event.target.value);
+    setBulbLightOn(bulbLightImage[event.target.value]);
+    setHomeWithLightUrl(homeWithLightImage[event.target.value]);
   };
 
   return (
