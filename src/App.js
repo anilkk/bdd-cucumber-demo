@@ -2,6 +2,11 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Alert from "@material-ui/lab/Alert";
 import AlertTitle from "@material-ui/lab/AlertTitle";
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 import "./styles.css";
 
 const bulbLightOn =
@@ -20,6 +25,11 @@ const homeWithoutLightUrl =
 const BddDemo = function() {
   const [myLight, setMyLight] = React.useState(false);
   const [myTime, setMyTime] = React.useState(true);
+  const [lampLight, setLampLight] = React.useState('yellow');
+
+  const handleLampLightChange = (event) => {
+    setLampLight(event.target.value);
+  };
 
   return (
     <Grid
@@ -84,6 +94,14 @@ const BddDemo = function() {
                   alt={myLight ? "Bulb light on" : "Bulb light off"}
                 />
                 <p className="font-sty-italic">Maria can perform this action</p>
+                <h3> Choose lamp light color</h3>
+                <FormControl component="fieldset">
+                  <RadioGroup aria-label="gender" name="gender1" value={lampLight} onChange={handleLampLightChange}>
+                    <FormControlLabel value="yellow" control={<Radio />} label="Yellow" />
+                    <FormControlLabel value="red" control={<Radio />} label="Red" />
+                    <FormControlLabel value="orange" control={<Radio />} label="Orange" />
+                  </RadioGroup>
+                </FormControl>
               </Grid>
             </Grid>
           </Grid>
