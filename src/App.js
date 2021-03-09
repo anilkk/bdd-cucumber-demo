@@ -27,7 +27,7 @@ const sunAndCLoudUrl =
 const moonAndStarUrl =
   "https://res.cloudinary.com/anilkumark/image/upload/v1594198626/bdd/moon-and-star_rqivr9.png";
 const homeWithoutLightUrl =
-  "https://res.cloudinary.com/anilkumark/image/upload/v1594198626/bdd/light-off_opnuay.png";
+  "https://res.cloudinary.com/anilkumark/image/upload/v1615305440/bdd/light-off-new_qwwf2u.png";
 
 const BddDemo = function() {
   const [myLight, setMyLight] = React.useState(false);
