@@ -26,4 +26,17 @@
       And light is off
      When she switch on the light
      Then she should be able to read the book
+
+  Scenario Outline: Maria should be able to read book during the night with light color <light_color>
+    Given Maria is at her home
+      And it's a night
+      And light is off
+    When she switch on the light with <light_color>
+    Then she should be able to read the book
+
+    Examples: 
+      | light_color | 
+      | yellow      | 
+      | red         | 
+      | orange      | 
   

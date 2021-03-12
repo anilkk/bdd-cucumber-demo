@@ -108,9 +108,9 @@ const BddDemo = function() {
                 <h3> Choose lamp light color</h3>
                 <FormControl component="fieldset">
                   <RadioGroup aria-label="gender" name="gender1" value={lampLight} onChange={handleLampLightChange}>
-                    <FormControlLabel value="yellow" control={<Radio />} label="Yellow" />
-                    <FormControlLabel value="red" control={<Radio />} label="Red" />
-                    <FormControlLabel value="orange" control={<Radio />} label="Orange" />
+                    <FormControlLabel value="yellow" control={<Radio />} label="Yellow" test-data="yellow" />
+                    <FormControlLabel value="red" control={<Radio />} label="Red" test-data="red" />
+                    <FormControlLabel value="orange" control={<Radio />} label="Orange" test-data="orange" />
                   </RadioGroup>
                 </FormControl>
               </Grid>
