@@ -98,13 +98,13 @@ const BddDemo = function() {
                     <span className="slider round" />
                   </label>
                 </h3>
+                <p className="font-sty-italic">Maria can perform this action</p>
               </Grid>
               <Grid item>
                 <img
                   src={myLight ? bulbLightOn : bulbLightOff}
                   alt={myLight ? "Bulb light on" : "Bulb light off"}
                 />
-                <p className="font-sty-italic">Maria can perform this action</p>
               </Grid>
               <Grid item>
                 <h3> Choose lamp light color</h3>
