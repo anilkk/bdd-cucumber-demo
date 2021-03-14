@@ -56,7 +56,7 @@ const BddDemo = function() {
             <Grid item>
               <h1 className="banner-header">BDD Demo</h1>
             </Grid>
-            <Grid item container direction="column" alignItems="flex-end">
+            <Grid item container direction="column" alignItems="center">
               <h3>
                 Change Context (GIVEN):{" "}
                 <label className="switch">
@@ -82,7 +82,7 @@ const BddDemo = function() {
               </p>
               <hr />
             </Grid>
-            <Grid item container direction="column" alignItems="flex-end">
+            <Grid item container direction="column" alignItems="center">
               <Grid item>
                 <h3>
                   Trigger Action (WHEN):{" "}
@@ -105,6 +105,8 @@ const BddDemo = function() {
                   alt={myLight ? "Bulb light on" : "Bulb light off"}
                 />
                 <p className="font-sty-italic">Maria can perform this action</p>
+              </Grid>
+              <Grid item>
                 <h3> Choose lamp light color</h3>
                 <FormControl component="fieldset">
                   <RadioGroup aria-label="gender" name="gender1" value={lampLight} onChange={handleLampLightChange}>

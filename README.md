@@ -1,6 +1,6 @@
 # BDD Cucumber demo [![BDD Cucumber demo](https://circleci.com/gh/anilkk/bdd-cucumber-demo.svg?style=svg)](https://circleci.com/gh/anilkk/bdd-cucumber-demo/tree/master.svg?style=svg)
 
-It's demo application to demonstrate **Behavior Driven Development** using [Cucumber](https://cucumber.io/). Test scenarios from the perspective of **user** and **outside-in approach**.
+It's demo application to demonstrate **Behavior Driven Development** using [Cucumber](https://cucumber.io/). Test scenarios from the perspective of **user** and **outside-in approach**. [Demo BDD Cucumber site](https://bdd-cucumber-demo.netlify.app/).
 
 E2E automation tests are written using [Cypress](https://www.cypress.io/) and executed on [CircleCI](https://circleci.com/).
 
