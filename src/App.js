@@ -48,6 +48,8 @@ const BddDemo = function() {
       direction="row"
       alignItems="center"
       spacing={3}
+      data-test="bdd-demo-app-container"
+      data-test-day-time={myTime ? "morning" : "night"}
       className={myTime ? "day" : "night"}
     >
       <Grid item xs={12}>
@@ -63,7 +65,7 @@ const BddDemo = function() {
                   <input
                     type="checkbox"
                     checked={myTime}
-                    test-data={myTime ? "day" : "night"}
+                    data-test={myTime ? "day" : "night"}
                     onChange={event => {
                       setMyTime(event.target.checked);
                     }}
@@ -90,7 +92,7 @@ const BddDemo = function() {
                     <input
                       type="checkbox"
                       checked={myLight}
-                      test-data={myLight ? "light-on" : "light-off"}
+                      data-test={myLight ? "light-on" : "light-off"}
                       onChange={event => {
                         setMyLight(event.target.checked);
                       }}
@@ -110,9 +112,9 @@ const BddDemo = function() {
                 <h3> Choose lamp light color</h3>
                 <FormControl component="fieldset">
                   <RadioGroup aria-label="gender" name="gender1" value={lampLight} onChange={handleLampLightChange}>
-                    <FormControlLabel value="yellow" control={<Radio />} label="Yellow" test-data="yellow" />
-                    <FormControlLabel value="red" control={<Radio />} label="Red" test-data="red" />
-                    <FormControlLabel value="orange" control={<Radio />} label="Orange" test-data="orange" />
+                    <FormControlLabel value="yellow" control={<Radio />} label="Yellow" data-test="yellow" />
+                    <FormControlLabel value="red" control={<Radio />} label="Red" data-test="red" />
+                    <FormControlLabel value="orange" control={<Radio />} label="Orange" data-test="orange" />
                   </RadioGroup>
                 </FormControl>
               </Grid>
@@ -130,7 +132,7 @@ const BddDemo = function() {
                   variant="filled"
                   icon={false}
                   severity={myTime || myLight ? "success" : "error"}
-                  test-data={myTime || myLight ? "success" : "error"}
+                  data-test={myTime || myLight ? "success" : "error"}
                 >
                   <AlertTitle>Outcome (THEN):</AlertTitle>
                   Maria {myTime || myLight ? "can" : "can't"}{" "}

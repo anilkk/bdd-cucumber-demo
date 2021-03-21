@@ -1,4 +1,11 @@
 {
+  "env": {
+    "PRODUCTION_PAGE_URL": "https://bdd-cucumber-demo.netlify.app/"
+  },
+  "retries": {
+    "runMode": 2,
+    "openMode": 1
+  },
   "testFiles": "**/*.feature",
   "firefoxGcInterval": null
 }
